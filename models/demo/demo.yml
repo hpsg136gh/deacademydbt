@@ -17,15 +17,19 @@ models:
         data_tests:
           - salary_check
   - name: customer
-    description: "Customer dbt table"
+    description: "Customer model dbt table"
   - name: customer_vw
     description: "DBT Model for the customer view"
   - name: sales
-    description: "Sales dbt table" 
+    description: "Sales model dbt table" 
   - name: product
-    description: "PRODUCT dbt table" 
+    description: "PRODUCT modeldbt table" 
   - name: purchase
-    description: "Purchase dbt table" 
+    description: "Purchase model dbt table" 
+  - name: clean_orders
+    description: "Orders ephemeral model dbt table"
+  - name: final_orders
+    description: "Final Orders model dbt table"
 
 sources:
   - name: employee
@@ -53,3 +57,8 @@ sources:
     schema: PUBLIC
     tables:
       - name: purchase_src
+  - name: orders
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: base_orders
